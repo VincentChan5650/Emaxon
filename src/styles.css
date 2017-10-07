@@ -4,3 +4,29 @@
 .content{
     padding-top:10px;
 }
+
+.button-panel{
+    display: none;
+}
+.card-block{
+    padding:20px;
+}
+.card{
+    height:350px;
+    margin:10px auto;
+}
+.card-img-top{
+    height:211px;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: #f8f9fa;
+}
+.btn-info{
+    color:#f8f9fa !important;
+    cursor: pointer;
+}
+.btn-info:hover{
+    color:#17a2b8 !important;
+    background: #f8f9fa;
+}
