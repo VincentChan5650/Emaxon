@@ -12,7 +12,6 @@
     padding:20px;
 }
 .card{
-    height:350px;
     margin:10px auto;
 }
 .card-img-top{
@@ -29,4 +28,10 @@
 .btn-info:hover{
     color:#17a2b8 !important;
     background: #f8f9fa;
+}
+.card-footer button{
+    cursor: pointer;
+}
+.product-number{
+    padding-top: 8px;
 }
