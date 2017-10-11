@@ -1,7 +1,7 @@
-import { Product } from '../../models/product';
+import { Product } from '../../../models/product';
 import { Subscription } from 'rxjs/Rx';
 import { subscribeOn } from 'rxjs/operator/subscribeOn';
-import { ProductService } from './../../services/product.service';
+import { ProductService } from '../../../services/product.service';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { DataTableResource } from 'angular-4-data-table';
 

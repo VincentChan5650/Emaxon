@@ -1,0 +1,49 @@
+<h1>Shopping Cart</h1>
+<ng-container *ngIf="cart$ | async as cart">
+    <p>You have {{ cart.totalItemCount }} items in your shopping cart.
+        <button 
+        *ngIf='cart.items.length'
+        (click)='clearCart()'
+        class="btn btn-info btn-sm">Clear Shopping Cart</button>
+    </p>
+    <table class="table">
+      <thead>
+        <tr>
+          <th></th>
+          <th>Product</th>
+          <th class='text-left'>Quantity</th>
+          <th>Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of cart.items">
+          <td>
+            <div [style.backgroundImage]="'url('+ item.imageUrl +')'" class='thumbnail'></div>
+          </td>
+          <td>{{ item.title }}</td>
+          <td>
+              <app-product-quantity
+              [product]='item'
+              [shopping-cart]='cart'
+              ></app-product-quantity>
+          </td>
+          <td>{{ item.totalPrice | currency: 'USD': true }}</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th>{{ cart.totalPrice | currency: 'USD': true }}</th>
+        </tr>
+      </tfoot>
+    </table>
+    <a 
+    *ngIf='cart.items.length'
+    routerLink="/check-out"
+    class="btn btn-primary">
+    Check Out
+  </a>
+    
+</ng-container>

@@ -3,11 +3,14 @@
     <app-product-filter [category]='category'></app-product-filter>
   </div>
   <div class="col-md-9">
-      <div class="row">
+    
+      <div class="row" *ngIf="cart$ | async as cart">
           <ng-container *ngFor="let p of filteredProducts; let i = index">
               <div class="col">
                   <div class="container" >
-                      <app-product-card [product]='p' [show-actions]="true"
+                      <app-product-card 
+                      [product]='p'
+                      [show-actions]="true"
                       [shopping-cart]="cart"
                       ></app-product-card>
                   </div>
@@ -15,7 +18,7 @@
                 <div *ngIf="(i+1)%2 === 0" class="w-100"></div>
           </ng-container>
         </div>
-        
+        <!-- [shopping-cart]="cart" -->
   </div>
 </div>
 
