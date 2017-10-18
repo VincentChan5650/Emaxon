@@ -1,16 +1,16 @@
 <div class="row">
-    <div class="col-md-2">
+    <div class="col-md-10">
         <a routerLink='/admin/products/new' class="btn btn-primary">New Product</a>
     </div>
-    <div class="col-md-8">
-        <p>
+    <!-- <div class="col-md-8">
+        <p *ngIf="products">
             <input type="search" 
             class="form-control" 
             placeholder="Search Products"
             #query 
-            (keyup)='filter(query.value)'>
+            (keyup.enter)='filterTable(query.value)'>
         </p>
-    </div>
+    </div> -->
 </div>
 
 <data-table

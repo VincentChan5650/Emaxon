@@ -1,6 +1,6 @@
 import { UserService } from './user.service';
 import { AppUser } from '../models/app-user';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { Injectable } from '@angular/core';
 import * as firebase from 'firebase';
@@ -19,6 +19,7 @@ export class AuthService {
   constructor(
     private afAuth:AngularFireAuth,
     private route: ActivatedRoute,
+    private router: Router,
     private userService:UserService
   ) { 
     this.user$ = afAuth.authState;
@@ -29,6 +30,7 @@ export class AuthService {
     localStorage.setItem('returnUrl', returnUrl);
 
     this.afAuth.auth.signInWithRedirect(new firebase.auth.GoogleAuthProvider());
+    this.router.navigate[('/')];
   }
   
   logout(){

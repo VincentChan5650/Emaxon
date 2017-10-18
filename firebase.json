@@ -1,5 +1,24 @@
 {
-    "hosting":{
-        "public": "dist"
-    }
+  "hosting":{
+    "firebase": "Emaxon",
+    "public": "dist",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "redirects": [ {
+      "source" : "/foo",
+      "destination" : "/bar",
+      "type" : 301
+    }],
+    "rewrites": [{
+      "source": "/public/**",
+      "destination": "/index.html"
+    },
+    {
+      "source": "**",
+      "destination": "/index.html"
+    }]
+  }
 }

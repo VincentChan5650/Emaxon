@@ -28,19 +28,19 @@ export class AdminProductsComponent implements OnInit, OnDestroy {
       this.products = products;
       this.initializeTable(products)
     });
-    console.log(this.products);
-
-    //for searching
    }
-   filter(query:string){
-     let filteredProducts = (query) ?
-     this.products.filter(p=>p.title.toLowerCase().includes(query.toLowerCase())) 
-     : this.products;
 
-     this.initializeTable(this.filteredProducts);
-   }
+   //for searching
+  //  filterTable(query:string){
+  //    let filteredProducts = (query) ?
+  //    this.products.filter(p=>p.title.toLowerCase().includes(query.toLowerCase())) 
+  //    : this.products;
+
+  //    this.initializeTable(this.filteredProducts);
+  //  }
 
    private initializeTable(products: Product[]){
+     console.log('initializeTable', products)
       this.tableResource = new DataTableResource(products);
       this.tableResource.query({offset:0})
       .then(items => this.items = items);
